@@ -19,7 +19,8 @@ public class SoftUniTest {
     static final String LOGIN_PASSWORD = "testtest";
     @Before
     public void setUp(){
-    this.driver = new FirefoxDriver();
+        System.setProperty("webdriver.gecko.driver", "C:\\Users\\vaneto\\Documents\\QA\\geckodriver-v0.14.0-win64\\geckodriver.exe");
+        this.driver = new FirefoxDriver();
     this.driver
             .manage()
             .timeouts()
@@ -70,6 +71,6 @@ public class SoftUniTest {
 
     @After
     public void tearDown(){
-     this.driver.quit();
+     this.driver.quit(); // This row causes "Firefox has stopped working" error in Win7
     }
 }
